@@ -8,13 +8,6 @@ context:
   name: ${{ repo_name }}
   component_version: ${{ component_name ~ major_version }}
   cxx_name: ${{ "lib" ~ name }}
-  # osx-arm64
-  assimp_version: ">=6.0.3,<6.0.4.0a0"
-  ffmpeg_version: ">=8.0.1,<9.0a0"
-  freeimage_version: ">=3.18.0,<3.19.0a0"
-  libgdal_version: ">=3.12.2,<3.13.0a0"
-  spdlog_version: ">=1.17.0,<1.18.0a0"
-  tinyxml2_version: ">=11.0.0,<11.1.0a0"
 
 recipe:
   name: ${{ name }}
@@ -45,7 +38,7 @@ outputs:
       build:
         - ${{ compiler('cxx') }}
         - ${{ compiler('c') }}
-        #- ${{ stdlib("c") }}
+        - ${{ stdlib("c") }}
         - ninja
         - cmake
         - pkg-config
@@ -53,18 +46,18 @@ outputs:
         - libgz-math
         - libgz-cmake
         - libgz-utils
-        - spdlog ${{ spdlog_version }}
+        - spdlog
         - if: win
           then:
             - dlfcn-win32
         - if: linux
           then:
             - libuuid
-        - freeimage ${{ freeimage_version }}
-        - tinyxml2 ${{ tinyxml2_version }}
-        - ffmpeg ${{ ffmpeg_version }}
-        - libgdal ${{ libgdal_version }}
-        - assimp ${{ assimp_version }}
+        - freeimage
+        - tinyxml2
+        - ffmpeg
+        - libgdal
+        - assimp
       run_exports:
         - ${{ pin_subpackage(cxx_name, upper_bound='x') }}
     tests:
