@@ -21,9 +21,11 @@ cxx_compiler:
 cxx_compiler_version:
 - '19'
 ffmpeg:
-- '8'
+- '8.0'
+- '8.1'
 libgdal:
-- '3.12'
+- '3.12.2'
+- '3.12.4'
 libgz_cmake:
 - '5'
 libgz_math:
@@ -41,3 +43,5 @@ tinyxml2:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
+- - ffmpeg
+  - libgdal

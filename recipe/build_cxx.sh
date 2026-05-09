@@ -20,6 +20,7 @@ fi
 
 cmake ${CMAKE_ARGS} .. \
       -G "Ninja" \
+      -DBUILD_TESTING=OFF \
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP=True \
       -DFREEIMAGE_RUNS:BOOL=ON \

@@ -24,6 +24,7 @@ source:
 
 build:
   number: 0
+  string: "ffmpeg${{ ffmpeg | replace('.', '') }}_gdal${{ libgdal | replace('.', '') }}_h${{ hash }}"
 
 outputs:
   - package:
