@@ -23,8 +23,8 @@ source:
       - macro_path_binary_relocation.patch
 
 build:
-  number: 0
-  string: "ffmpeg${{ ffmpeg | replace('.', '') }}_gdal${{ libgdal | replace('.', '') }}_h${{ hash }}"
+  number: 1
+  string: "ffmpeg${{ ffmpeg | version_to_buildstring }}_gdal${{ libgdal | version_to_buildstring }}_h${{ hash }}_${{ build_number }}"
 
 outputs:
   - package:
